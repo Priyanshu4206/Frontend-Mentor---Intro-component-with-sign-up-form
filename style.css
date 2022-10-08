@@ -94,7 +94,7 @@ form {
 }
 
 .field {
-    border: 1px solid rgba(158, 158, 158, 0.267);
+    border: 1px solid hsl(246, 25%, 77%);
     padding: 0.5rem 1.5rem;
     margin: 0.3rem 0;
     border-radius: 3px;
