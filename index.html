@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/style.css">
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+
+<body>
+  <div class="box">
+    <main>
+      <div class="left Container">
+        <h1>Learn to code by watching others
+        </h1>
+        <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
+          but understanding how developers think is invaluable. </p>
+      </div>
+      <div class="right Container">
+        <div class="try">
+          <span><strong>Try it free 7 days</strong>
+            then $20/mo. thereafter
+          </span>
+        </div>
+        <form id="form">
+          <div class="holder">
+            <input type="text" placeholder="First Name" id="first_name" class="field form-control">
+            <img src="/images/icon-error.svg" alt="" style="width: 16px;">
+            <span class="error_msg">First Name cannot be empty</span>
+          </div>
+          <div class="holder">
+            <input type="text" placeholder="Last Name" required id="last_name" class=" field form-control">
+            <img src="/images/icon-error.svg" alt="" style="width: 16px;">
+            <span class="error_msg">Last Name cannot be empty</span>
+          </div>
+          <div class="holder">
+            <input type="email" placeholder="Email Address" required id="email" class="field form-control">
+            <img src="/images/icon-error.svg" alt="" style="width: 16px;">
+            <span class="error_msg">Looks like this is not an email</span>
+          </div>
+          <div class="holder">
+            <input type="password" placeholder="Password" required id="pswd" class="field form-control">
+            <img src="/images/icon-error.svg" alt="" style="width: 16px;">
+            <span class="error_msg">Password cannot be empty</span>
+          </div>
+          <button onclick='checkInputs()' class="btn signup">Claim your free trial </button>
+          <div class="conditions">
+            <span>
+              By clicking the button, you are agreeing to our
+              <a href="#">Terms and Services</a></span>
+          </div>
+        </form>
+      </div>
+    </main>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/Priyanshu4206">Priyanshu Agarwal</a>.
+    </p>
+  </div>
+</body>
+
+<script>
+  const form = document.getElementById('form');
+  const firstName = document.getElementById('first_name');
+  const lastName = document.getElementById('last_name');
+  const email = document.getElementById('email');
+  const password = document.getElementById('pswd');
+
+  function checkInputs() {
+    let first_name = firstName.value.trim();
+    let last_name = lastName.value.trim();
+    let emailId = email.value.trim();
+    let pswd = password.value.trim();
+    if (first_name === '' || first_name == null) {
+      setError(firstName);
+    }
+    else {
+      setSuccess(firstName);
+    }
+    if (last_name === '' || last_name == null) {
+      setError(lastName);
+    }
+    else {
+      setSuccess(lastName);
+    }
+    if (emailId === '' || emailId == null) {
+      setError(email);
+      email.placeholder = 'email@adress.com';
+      email.style.color = 'red';
+    }
+    else {
+      setSuccess(email);
+    }
+    if (pswd === '' || pswd == null) {
+      setError(password);
+    }
+    else {
+      setSuccess(password);
+    }
+  }
+  function setError(elementId) {
+    elementId.placeholder = '';
+    elementId.nextElementSibling.style.visibility = 'visible';
+    elementId.nextElementSibling.nextElementSibling.style.visibility = 'visible';
+    elementId.classList.add('error');
+  }
+
+  function setSuccess(elementId) {
+    elementId.nextElementSibling.style.visibility = 'hidden';
+    elementId.nextElementSibling.nextElementSibling.style.visibility = 'hidden';
+    elementId.classList.remove('error');
+  }
+</script>
+
+</html>
