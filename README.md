@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Frontend Mentor | Intro component with sign up form]()
+- Live Site URL: [Frontend Mentor | Intro component with sign up form](https://sign-up-form-solution.netlify.app/)
 
 ### Built with
 
@@ -47,5 +47,5 @@ It helped me to improve my styling skills too by working on the position relativ
 
 ## Author
 
-- Website - [Frontend Mentor | Intro component with sign up form]()
+- Website - [Frontend Mentor | Intro component with sign up form](https://sign-up-form-solution.netlify.app/)
 - Frontend Mentor - [@Priyanshu4206](https://www.frontendmentor.io/profile/Priyanshu4206)
